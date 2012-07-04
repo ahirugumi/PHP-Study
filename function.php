@@ -39,4 +39,44 @@ $piyo=1;
 hoge_function4($piyo);
 print "piyo:{$piyo}\n";
 
+//関数の戻り値
+function hoge_function5(){
+  $ret='moge';
+  return $ret . "\n";
+}
+print hoge_function5();
+
+//スコープ
+//関数の中と外では、スコープが別
+$val='ルミナス';
+function hoge_function6(){
+  $val='ブラック';
+  print $val . "\n";
+}
+hoge_function6();
+print $val . "\n";
+
+//スーパーグローバル $GLOBALS
+$val1='ドリーム';
+function hoge_function7(){
+  $val1='レモネード';
+  print $val1 . "\n";
+  print $GLOBALS['val1'] . "\n";
+  $GLOBALS['val1'] = 'ハッピー';
+}
+print $val1 . "\n";
+hoge_function7();
+print $GLOBALS['val1'] . "\n";
+
+//ローカルスコープの変数をグローバルスコープにする global
+$val2='ピーチ';
+function hoge_function8(){
+  global $val2;
+  print $val2 . "\n";
+  $val2='イーグレット';
+}
+print $val2 . "\n";
+hoge_function8();
+print $val2 . "\n";
+
 ?>
