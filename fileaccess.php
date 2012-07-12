@@ -44,8 +44,21 @@ print "\n";
 //CSVファイルを読み込む
 $file_5=fopen('/Users/tomohiro/gitrepo/study/PHP-Study/five.txt', 'rb');
 while( $ret_csv = fgetcsv($file_5, 256 ) ) {
-    print $ret_csv[0] . ", " .$ret_csv[1] . ", " . $ret_csv[2] . ", " . "\n";
+    print $ret_csv[0] . ", " .$ret_csv[1] . ", " . $ret_csv[2] . "\n";
 }
+
+//ファイルの存在チェック
+if (file_exists('/Users/tomohiro/gitrepo/study/PHP-Study/hoge.txt')){
+    print "存在しました\n";
+}else{
+    print "存在しません\n";
+}
+
+//ファイルのアクセス権限をチェックする
+$file='/Users/tomohiro/gitrepo/study/PHP-Study/five.txt';
+print "書き込み：" . is_writable($file) . "\n";
+print "読み込み：" . is_readable($file) . "\n";
+
 
 function make_csv_line($values) {
     foreach($values as $i =>$value) {
