@@ -59,6 +59,15 @@ $file='/Users/tomohiro/gitrepo/study/PHP-Study/five.txt';
 print "書き込み：" . is_writable($file) . "\n";
 print "読み込み：" . is_readable($file) . "\n";
 
+//エラーハンドリング
+$file=fopen('/Users/tomohiro/gitrepo/study/PHP-Study/hoge.txt', 'rb');
+if (!$file){
+    print "エラー：$php_errormsg\n";
+}
+$ret=file_get_contents('text.txt');
+if ($ret===false){
+    print "エラー：$php_errormsg\n";
+}
 
 function make_csv_line($values) {
     foreach($values as $i =>$value) {
