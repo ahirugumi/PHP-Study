@@ -81,4 +81,6 @@ $query = $db->query("update lens set spec = ? where id=?", array('F2.0', '100'))
 //delete
 $query = $db->query("delete from lens where id=?", array('100'));
 
+//データベースを切断する
+$db->disconnect();
 ?>

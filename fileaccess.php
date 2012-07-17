@@ -38,6 +38,7 @@ while ($row=$query->fetchRow()){
   fwrite($file_5, $line);
 }
 fclose($file_5);
+$db->disconnect();
 
 print "\n";
 
@@ -82,4 +83,5 @@ function make_csv_line($values) {
     }
     return implode(',', $values) . "\n";
 }
+
 ?>
