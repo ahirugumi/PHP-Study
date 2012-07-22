@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
 </head>
 <form method="post" action="post_webform.php">
 <!-- inputをポストする -->
@@ -36,9 +36,9 @@ POSTされた値<br>
 <?php 
 // is_arayでないと警告が発生する。
 // foreachの引数は、必ず配列でないといけない
-if (is_array($_POST['simle'])){
-    foreach ($_POST['smile'] as $smile){
-      print "　　$smile<br>";
-    }
+if (is_array($_POST['smile'])){
+  foreach ($_POST['smile'] as $smile){
+    print "　　$smile<br>";
+  }
 }
 ?>
